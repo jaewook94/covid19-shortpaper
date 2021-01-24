@@ -1,0 +1,39 @@
+<X-RAY>
+
+# main - grad CAM 이 잘됨. - 다른 kaggle 9500여게
+https://www.kaggle.com/ssarkar445/covid-19-xray-and-ct-scan-image-dataset
+
+
+# 기존에 이 데이터로 시작을 함.
+original (corona hack) _ 그래서 빼도 됨. 5910개 - 옛날에 했던것...
+https://www.kaggle.com/praveengovi/coronahack-chest-xraydataset?select=Chest_xray_Corona_Metadata.csv
+
+
+
+
+<Cough Spectrum>
+
+# 기침 스펙트럼 -> kaggle 데이터
+(https://www.kaggle.com/anaselmasry/ai-covid19-from-cough-samples?select=negative_Covid-19)
+
+# archive 폴더
+negative 약 330여개, positive 1604개
+
+# preprocessed_data 폴더
+test -  negative 330 positive 320
+train -  negative 1320 positive 1283
+
+# 처음에는 positive 를 지웠는데, wild card를 쓰면 
+rm preprocessed_data/train/positive/positive_0_8*
+숫자가 저 이름으로 시작하는 파일을 다 지운다. 대충 300여개 맞춰서 했는데 정확도가 저조함.
+돌리고, 자르고 contour하고
+negative를 A B C D E 이름으로 5배로 복사! 1500
+
+
+
+
+
+원본데이터(Xray랑 기침), 주석달고(이것저것), 이미지 합치고, fusion/ensemble 생각해주고!
+옛날의 모델로 새로운 데이터셋을 Xray 네트워크(모델)적용..
+
+기침 - 8개7개 모델 돌렸자나.._ -> fusion ensemble 못하는
